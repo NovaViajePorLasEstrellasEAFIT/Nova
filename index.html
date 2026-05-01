@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Configuración básica del documento y compatibilidad móvil -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nova: un universo narrativo para niños y familias, creado por estudiantes de Diseño Interactivo de EAFIT para Funavid." />
+  <title>Nova | Inicio</title>
+
+  <!-- Fuente amigable y suave para una estética infantil/familiar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos única para todo el proyecto -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Encabezado principal con navegación global -->
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand__logo">🌙</span>
+      <div class="brand__text">
+        <h1>Nova</h1>
+        <p>Un universo que acompaña, juega e inspira</p>
+      </div>
+    </div>
+
+    <nav class="site-nav" aria-label="Navegación principal">
+      <!-- Navegación pensada para GitHub Pages con rutas relativas -->
+      <a href="index.html" aria-current="page">Inicio</a>
+      <a href="cuentos.html">Narrativa</a>
+      <a href="juegos.html">Interactividad</a>
+      <a href="multimedia.html">Galería</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal de la página -->
+  <main class="page">
+    <!-- Hero: presentación general del universo -->
+    <section class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Universo narrativo infantil + experiencias interactivas</p>
+        <h2>Bienvenidos a Nova</h2>
+        <p>
+          Nova es un proyecto creado para acompañar a niños y familias con una experiencia amable, espacial y llena de imaginación.
+          Aquí conviven cuentos, juegos y piezas multimedia diseñadas para explorar con calma y curiosidad.
+        </p>
+      </div>
+
+      <!-- Espacio visual para una imagen principal futura -->
+      <div class="hero__art" aria-hidden="true">
+        <div class="planet planet--large"></div>
+        <div class="planet planet--small"></div>
+        <div class="sparkle sparkle--one">✨</div>
+        <div class="sparkle sparkle--two">⭐</div>
+      </div>
+    </section>
+
+    <!-- Bloque de personajes principales -->
+    <section class="intro-grid">
+      <!-- Sof-IA -->
+      <article class="info-card">
+        <h3>🤖 Sof-IA</h3>
+        <p>
+          Una guía amigable que acompaña a los niños en cada actividad. Sof-IA explica, anima y hace que el viaje por Nova sea más cercano y seguro.
+        </p>
+      </article>
+
+      <!-- Los Brillos -->
+      <article class="info-card">
+        <h3>✨ Los Brillos</h3>
+        <p>
+          Pequeñas energías del universo de Nova. Representan esperanza, descubrimiento y la magia que aparece cuando jugamos o leemos.
+        </p>
+      </article>
+    </section>
+
+    <!-- Botones grandes tipo card -->
+    <section class="card-actions" aria-label="Accesos principales">
+      <!-- Cada botón funciona como tarjeta interactiva -->
+      <a class="action-card" href="cuentos.html">
+        <span class="action-card__icon">🚀</span>
+        <span class="action-card__title">¡A explorar la historia!</span>
+        <span class="action-card__text">Entra al mundo narrativo de Nova.</span>
+      </a>
+
+      <a class="action-card" href="juegos.html">
+        <span class="action-card__icon">🎮</span>
+        <span class="action-card__title">¡Hora de jugar!</span>
+        <span class="action-card__text">Descubre el videojuego y el juego de mesa.</span>
+      </a>
+
+      <a class="action-card" href="multimedia.html">
+        <span class="action-card__icon">✨</span>
+        <span class="action-card__title">¡Mira la magia!</span>
+        <span class="action-card__text">Explora animaciones y video mapping.</span>
+      </a>
+    </section>
+  </main>
+
+  <!-- Pie de página simple para cerrar el sitio -->
+  <footer class="site-footer">
+    <p>Proyecto Nova · EAFIT × Funavid · Hecho con cariño para explorar, aprender y crear.</p>
+  </footer>
+</body>
+</html>
