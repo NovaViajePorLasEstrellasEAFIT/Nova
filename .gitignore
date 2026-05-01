@@ -1,0 +1,14 @@
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Archivos de diseño pesados. No creo que coloque pero por si acaso 
+*.ai
+*.psd
+*.pdf
+
+# Logs de Live Server (el pluggin de VsCode)
+.history/
