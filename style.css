@@ -3,6 +3,7 @@
    Esta hoja sirve para todas las páginas del proyecto
    ya sabes que CSS es un lenguaje de casacada osea que lo de arriba es la base general y lo de abajo es especifico para ese elemento
    Deben estar conectados por un selector (ya sea el nombre de la etiqueta, una clase o un ID
+   ojito que esto es distinto a html bro
    ========================================================= */
 
 /* Variables globales: permiten cambiar colores y medidas fácilmente */
@@ -10,11 +11,11 @@
   --bg: #f7f5ff;
   --surface: #ffffff;
   --surface-soft: #f2efff;
-  --primary: #8e7dff;
+  --primary: #e9bc19;
   --primary-dark: #6a58e0;
   --secondary: #9de7ff;
-  --accent: #ffd9f2;
-  --accent-2: #fff1b8;
+  --accent: #ebffd9;
+  --accent-2: #fceaa3;
   --text: #2d2a4a;
   --muted: #6d6a88;
   --shadow: 0 12px 30px rgba(106, 88, 224, 0.12);
