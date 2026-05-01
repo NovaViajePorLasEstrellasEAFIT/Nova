@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nova Interactividad: espacio para Unity WebGL y catálogo del juego de mesa." />
+  <title>Nova | Interactividad</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand__logo">🌙</span>
+      <div class="brand__text">
+        <h1>Nova</h1>
+        <p>Juegos y experiencias</p>
+      </div>
+    </div>
+
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="cuentos.html">Narrativa</a>
+      <a href="juegos.html" aria-current="page">Interactividad</a>
+      <a href="multimedia.html">Galería</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <!-- Sección para el videojuego -->
+    <section class="section-hero">
+      <h2>Interactividad en Nova</h2>
+      <p>
+        Aquí conviven el videojuego 2D tipo metroidvania en Unity WebGL y el juego de mesa físico con sus materiales de apoyo.
+      </p>
+    </section>
+
+    <section class="content-block">
+      <div class="section-heading">
+        <h3>🎮 Videojuego Unity WebGL</h3>
+        <p>Este contenedor está preparado para recibir el build exportado desde Unity.</p>
+      </div>
+
+      <!-- Contenedor específico para alojar el build WebGL -->
+      <div class="unity-build" id="unity-container">
+        <div class="unity-build__placeholder">
+          <p><strong>Espacio de carga Unity WebGL</strong></p>
+          <p>Jerónimo podrá reemplazar este bloque por los archivos exportados del build.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catálogo del juego de mesa físico -->
+    <section class="content-block">
+      <div class="section-heading">
+        <h3>🃏 Juego de mesa físico</h3>
+        <p>Sección pensada para mostrar caja, mapa, cartas y reglas del prototipo.</p>
+      </div>
+
+      <div class="catalog-grid">
+        <article class="catalog-card">
+          <img src="assets/img/juego-caja.jpg" alt="Caja del juego de mesa de Nova" />
+          <h4>Caja</h4>
+          <p>Fotografía frontal del empaque o presentación del juego.</p>
+        </article>
+
+        <article class="catalog-card">
+          <img src="assets/img/juego-mapa.jpg" alt="Mapa del juego de mesa de Nova" />
+          <h4>Mapa</h4>
+          <p>Tablero, recorrido o superficie principal de juego.</p>
+        </article>
+
+        <article class="catalog-card">
+          <img src="assets/img/juego-cartas.jpg" alt="Cartas del juego de mesa de Nova" />
+          <h4>Cartas</h4>
+          <p>Conjunto de cartas, personajes, eventos o acciones.</p>
+        </article>
+
+        <article class="catalog-card">
+          <img src="assets/img/juego-reglas.jpg" alt="Reglas del juego de mesa de Nova" />
+          <h4>Reglas</h4>
+          <p>Instrucciones resumidas o manual de juego.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Proyecto Nova · Videojuego + juego de mesa físico.</p>
+  </footer>
+</body>
+</html>
