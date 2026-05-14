@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nova Animaciones: animación digital y video mapping en esferas." />
+  <title>Nova | Animaciones</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand__logo">🌙</span>
+      <div class="brand__text">
+        <h1>Nova</h1>
+        <p>Animación y experiencias visuales</p>
+      </div>
+    </div>
+
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="cuentos.html">Narrativa</a>
+      <a href="juegos.html">Interactividad</a>
+      <a href="multimedia.html">Galería</a>
+      <a href="animaciones.html" aria-current="page">Animaciones</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="section-hero">
+      <h2>Animaciones de Nova</h2>
+      <p>
+        Una selección de piezas audiovisuales para ampliar el universo visual de Nova.
+      </p>
+    </section>
+
+    <!-- Video 1 -->
+    <section class="content-block">
+      <div class="section-heading">
+        <h3>🌌 Animación digital: Al estilo de Yokai Dance</h3>
+        <p>Inserta aquí el video final exportado para reproducción local o embebida.</p>
+      </div>
+
+      <div class="video-frame">
+        <video controls preload="metadata" poster="assets/img/yokai-poster.jpg">
+          <source src="assets/video/yokai-dance.mp4" type="video/mp4" />
+          Tu navegador no soporta reproducción de video HTML5.
+        </video>
+      </div>
+    </section>
+
+    <!-- Video 2 -->
+    <section class="content-block">
+      <div class="section-heading">
+        <h3>✨ Video mapping en esferas</h3>
+        <p>Espacio para documentar la experiencia visual del mapping sobre superficies esféricas.</p>
+      </div>
+
+      <div class="video-frame">
+        <video controls preload="metadata" poster="assets/img/mapping-poster.jpg">
+          <source src="assets/video/mapping-esferas.mp4" type="video/mp4" />
+          Tu navegador no soporta reproducción de video HTML5.
+        </video>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Proyecto Nova · Animación, video mapping y exploración visual.</p>
+  </footer>
+</body>
+</html>
