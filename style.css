@@ -8,18 +8,19 @@
 
 /* Variables globales: permiten cambiar colores y medidas fácilmente */
 :root {
-  --bg: #f7f5ff;
-  --surface: #ffffff;
-  --surface-soft: #f2efff;
-  --primary: #e9bc19;
-  --primary-dark: #6a58e0;
-  --secondary: #9de7ff;
-  --accent: #ebffd9;
-  --accent-2: #fceaa3;
-  --text: #2d2a4a;
-  --muted: #6d6a88;
-  --shadow: 0 12px 30px rgba(106, 88, 224, 0.12);
-  --shadow-hover: 0 16px 36px rgba(106, 88, 224, 0.18);
+  --bg: #1d163d; /* Morado noche tierno, base del tablero */
+  --surface: rgba(255, 255, 255, 0.85); /* Mantener para legibilidad de tarjetas */
+  --surface-soft: rgba(59, 45, 117, 0.4); /* Morado traslúcido para bloques oscuros */
+  --primary: #f5c518; /* El amarillo/dorado brillante del logo NOVA y los Brillos */
+  --primary-dark: #3b2d75; /* El morado vibrante de las instrucciones */
+  --secondary: #a3e6ff; /* El azul pastel del vestido de Nova */
+  --accent: #baffc9; /* El verde mágico de los planetas del tablero */
+  --accent-2: #ffb7b2; /* El rosa tierno de los personajes secundarios */
+  --text: #211c42; /* Texto oscuro de alta legibilidad */
+  --muted: #5e5296; /* Texto secundario adaptado al nuevo universo */
+  --footer-gold: linear-gradient(135deg, #f5c518 0%, #e09f00 100%); /* El dorado cálido de la caja */
+  --shadow: 0 12px 30px rgba(11, 8, 34, 0.28);
+  --shadow-hover: 0 16px 36px rgba(11, 8, 34, 0.35);
   --radius-lg: 28px;
   --radius-md: 20px;
   --radius-sm: 14px;
@@ -40,13 +41,19 @@ html {
 /* Base tipográfica y fondo general */
 body {
   font-family: "Fredoka", system-ui, sans-serif;
-  background:
-    radial-gradient(circle at top, rgba(157, 231, 255, 0.25), transparent 28%),
-    radial-gradient(circle at bottom right, rgba(255, 217, 242, 0.35), transparent 30%),
-    var(--bg);
   color: var(--text);
   line-height: 1.6;
   min-height: 100vh;
+
+  /* Capas de estrellas CSS (diminutas y de diferente opacidad) + Fondo Morado Cálido */
+  background-image:
+    radial-gradient(1px 1px at 25px 40px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1.5px 1.5px at 75px 140px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 120px 30px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(2px 2px at 190px 80px, rgba(245, 197, 24, 0.5), transparent), /* Estrellitas doradas */
+    radial-gradient(circle at 50% 40%, #3c2f80 0%, #1a1235 100%); /* Gradiente morado tierno de fondo */
+  background-size: 200px 200px, 350px 350px, 150px 150px, 300px 300px, 100% 100%;
+  background-attachment: fixed;
 }
 
 /* Imágenes y video responsivos por defecto */
@@ -97,10 +104,11 @@ a {
 
 .brand__text h1 {
   font-size: clamp(1.5rem, 2vw, 2rem);
+  color: #f7f4ff;
 }
 
 .brand__text p {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.72);
   font-size: 0.95rem;
 }
 
@@ -114,8 +122,11 @@ a {
 .site-nav a {
   padding: 0.8rem 1.1rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 6px 16px rgba(106, 88, 224, 0.08);
+  background: rgba(255, 255, 255, 0.14);
+  color: #f7f4ff;
+  box-shadow: 0 6px 16px rgba(11, 8, 34, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
@@ -123,13 +134,14 @@ a {
 .site-nav a:focus-visible {
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
-  background: var(--surface);
+  background: rgba(255, 255, 255, 0.24);
   outline: none;
 }
 
 .site-nav a[aria-current="page"] {
   background: var(--primary);
-  color: #fff;
+  color: #1a1235;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Área principal */
@@ -145,8 +157,8 @@ a {
 
 .hero,
 .section-hero {
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   padding: clamp(1.25rem, 3vw, 2rem);
@@ -161,8 +173,8 @@ a {
 
 .eyebrow {
   display: inline-block;
-  background: var(--accent-2);
-  color: #6d5a00;
+  background: var(--primary);
+  color: #1a1235;
   padding: 0.45rem 0.8rem;
   border-radius: 999px;
   font-size: 0.9rem;
@@ -174,6 +186,7 @@ a {
   font-size: clamp(2rem, 4vw, 3.4rem);
   line-height: 1.1;
   margin-bottom: 0.75rem;
+  color: #1a1235;
 }
 
 .hero p,
@@ -188,8 +201,8 @@ a {
   min-height: 280px;
   border-radius: var(--radius-lg);
   background:
-    radial-gradient(circle at 30% 30%, rgba(157, 231, 255, 0.85), transparent 26%),
-    radial-gradient(circle at 70% 70%, rgba(255, 217, 242, 0.9), transparent 22%),
+    radial-gradient(circle at 30% 30%, rgba(163, 230, 255, 0.85), transparent 26%),
+    radial-gradient(circle at 70% 70%, rgba(255, 183, 178, 0.9), transparent 22%),
     linear-gradient(160deg, #fefcff, #eef3ff);
   overflow: hidden;
   box-shadow: inset 0 0 0 1px rgba(106, 88, 224, 0.08);
@@ -206,7 +219,7 @@ a {
   height: 150px;
   right: 30px;
   bottom: 24px;
-  background: radial-gradient(circle at 30% 30%, #fff, #9de7ff 55%, #7abfff);
+  background: radial-gradient(circle at 30% 30%, #fff, #a3e6ff 55%, #7abfff);
 }
 
 .planet--small {
@@ -214,7 +227,7 @@ a {
   height: 74px;
   left: 32px;
   top: 28px;
-  background: radial-gradient(circle at 30% 30%, #fff, #ffd9f2 55%, #f7a6da);
+  background: radial-gradient(circle at 30% 30%, #fff, #ffb7b2 55%, #f59f98);
 }
 
 .sparkle {
@@ -248,7 +261,7 @@ a {
 .content-block,
 .action-card,
 .catalog-card {
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.88);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
   border: 1px solid rgba(255, 255, 255, 0.7);
@@ -260,6 +273,7 @@ a {
 
 .info-card h3 {
   margin-bottom: 0.5rem;
+  color: #1a1235;
 }
 
 .info-card p,
@@ -278,6 +292,7 @@ a {
 .section-heading h3 {
   font-size: 1.35rem;
   margin-bottom: 0.35rem;
+  color: #1a1235;
 }
 
 /* =========================================================
@@ -313,6 +328,7 @@ a {
 .action-card__title {
   font-size: 1.15rem;
   font-weight: 700;
+  color: #1a1235;
 }
 
 .action-card__text {
@@ -372,6 +388,7 @@ a {
 
 .catalog-card h4 {
   margin-bottom: 0.35rem;
+  color: #1a1235;
 }
 
 /* =========================================================
@@ -381,7 +398,7 @@ a {
 .embed-frame,
 .video-frame,
 .unity-build {
-  background: linear-gradient(180deg, rgba(242, 239, 255, 0.85), rgba(255, 255, 255, 0.95));
+  background: linear-gradient(180deg, rgba(242, 239, 255, 0.92), rgba(255, 255, 255, 0.98));
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -426,10 +443,14 @@ a {
    ========================================================= */
 
 .site-footer {
-  padding: 0 0 2rem;
+  padding: 2rem 1rem;
   text-align: center;
-  color: var(--muted);
-  font-size: 0.95rem;
+  background: var(--footer-gold);
+  color: #1a1235; /* Morado ultra oscuro para máximo contraste sobre el oro */
+  font-weight: 600;
+  border-radius: var(--radius-md) var(--radius-md) 0 0; /* Curva arriba para cerrar el layout */
+  margin-top: 2rem;
+  box-shadow: 0 -6px 20px rgba(245, 197, 24, 0.15);
 }
 
 /* =========================================================
@@ -437,7 +458,8 @@ a {
    ========================================================= */
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
