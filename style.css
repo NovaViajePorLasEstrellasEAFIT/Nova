@@ -9,7 +9,7 @@
 /* Variables globales: permiten cambiar colores y medidas fácilmente */
 :root {
   --bg: #1d163d; /* Morado noche tierno, base del tablero */
-  --surface: rgba(255, 255, 255, 0.85); /* Mantener para legibilidad de tarjetas */
+  --surface: rgba(255, 255, 255, 0.78); /* Blanco translúcido para glassmorphism */
   --surface-soft: rgba(59, 45, 117, 0.4); /* Morado traslúcido para bloques oscuros */
   --primary: #f5c518; /* El amarillo/dorado brillante del logo NOVA y los Brillos */
   --primary-dark: #3b2d75; /* El morado vibrante de las instrucciones */
@@ -50,8 +50,8 @@ body {
     radial-gradient(1px 1px at 25px 40px, rgba(255, 255, 255, 0.9), transparent),
     radial-gradient(1.5px 1.5px at 75px 140px, rgba(255, 255, 255, 0.8), transparent),
     radial-gradient(1px 1px at 120px 30px, rgba(255, 255, 255, 0.6), transparent),
-    radial-gradient(2px 2px at 190px 80px, rgba(245, 197, 24, 0.5), transparent), /* Estrellitas doradas */
-    radial-gradient(circle at 50% 40%, #3c2f80 0%, #1a1235 100%); /* Gradiente morado tierno de fondo */
+    radial-gradient(2px 2px at 190px 80px, rgba(245, 197, 24, 0.5), transparent),
+    radial-gradient(circle at 50% 40%, #3c2f80 0%, #1a1235 100%);
   background-size: 200px 200px, 350px 350px, 150px 150px, 300px 300px, 100% 100%;
   background-attachment: fixed;
 }
@@ -98,8 +98,10 @@ a {
 }
 
 .brand__logo {
-  font-size: 2rem;
-  line-height: 1;
+  width: clamp(88px, 10vw, 140px);
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .brand__text h1 {
@@ -127,6 +129,7 @@ a {
   box-shadow: 0 6px 16px rgba(11, 8, 34, 0.16);
   border: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
@@ -157,11 +160,13 @@ a {
 
 .hero,
 .section-hero {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.42);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   padding: clamp(1.25rem, 3vw, 2rem);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
 }
 
 .hero {
@@ -198,20 +203,34 @@ a {
 /* Área decorativa espacial en el hero */
 .hero__art {
   position: relative;
-  min-height: 280px;
+  min-height: 300px;
   border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at 30% 30%, rgba(163, 230, 255, 0.85), transparent 26%),
-    radial-gradient(circle at 70% 70%, rgba(255, 183, 178, 0.9), transparent 22%),
-    linear-gradient(160deg, #fefcff, #eef3ff);
+  background-image:
+    radial-gradient(1px 1px at 25px 40px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1.5px 1.5px at 75px 140px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 120px 30px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(2px 2px at 190px 80px, rgba(245, 197, 24, 0.5), transparent),
+    radial-gradient(circle at 50% 40%, #3c2f80 0%, #1a1235 100%);
+  background-size: 200px 200px, 350px 350px, 150px 150px, 300px 300px, 100% 100%;
   overflow: hidden;
-  box-shadow: inset 0 0 0 1px rgba(106, 88, 224, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 .planet {
   position: absolute;
   border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
+}
+
+.planet__character {
+  position: relative;
+  width: 66%;
+  height: auto;
+  object-fit: contain;
+  z-index: 1;
 }
 
 .planet--large {
@@ -253,22 +272,57 @@ a {
 
 .intro-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
 .info-card,
 .content-block,
 .action-card,
-.catalog-card {
-  background: rgba(255, 255, 255, 0.88);
+.catalog-card,
+.gallery-item,
+.embed-frame,
+.video-frame,
+.unity-build {
+  background: rgba(255, 255, 255, 0.8);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
 }
 
 .info-card {
-  padding: 1.25rem;
+  position: relative;
+  overflow: visible;
+  padding: 1.35rem 1.35rem 1.35rem 10.5rem;
+  min-height: 170px;
+}
+
+.info-card--right {
+  padding-left: 1.35rem;
+  padding-right: 10.5rem;
+}
+
+.info-card__art {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(120px, 18vw, 190px);
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 14px 24px rgba(11, 8, 34, 0.18));
+}
+
+.info-card--left .info-card__art {
+  left: -48px;
+}
+
+.info-card--right .info-card__art {
+  right: -48px;
 }
 
 .info-card h3 {
@@ -351,10 +405,7 @@ a {
 }
 
 .gallery-item {
-  background: var(--surface);
-  border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: var(--shadow);
 }
 
 .gallery-item img {
@@ -399,7 +450,6 @@ a {
 .video-frame,
 .unity-build {
   background: linear-gradient(180deg, rgba(242, 239, 255, 0.92), rgba(255, 255, 255, 0.98));
-  border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow);
   border: 1px solid rgba(106, 88, 224, 0.08);
@@ -446,9 +496,9 @@ a {
   padding: 2rem 1rem;
   text-align: center;
   background: var(--footer-gold);
-  color: #1a1235; /* Morado ultra oscuro para máximo contraste sobre el oro */
+  color: #1a1235;
   font-weight: 600;
-  border-radius: var(--radius-md) var(--radius-md) 0 0; /* Curva arriba para cerrar el layout */
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
   margin-top: 2rem;
   box-shadow: 0 -6px 20px rgba(245, 197, 24, 0.15);
 }
@@ -477,11 +527,30 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .intro-grid,
   .card-actions,
   .gallery-grid,
   .catalog-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-card,
+  .info-card--right {
+    padding-left: 1.35rem;
+    padding-right: 1.35rem;
+  }
+
+  .info-card__art {
+    position: absolute;
+    width: 120px;
+    opacity: 0.95;
+  }
+
+  .info-card--left .info-card__art {
+    left: -28px;
+  }
+
+  .info-card--right .info-card__art {
+    right: -28px;
   }
 }
 
@@ -500,7 +569,6 @@ a {
     justify-content: center;
   }
 
-  .intro-grid,
   .card-actions,
   .gallery-grid,
   .catalog-grid {
@@ -515,5 +583,25 @@ a {
 
   .action-card {
     min-height: auto;
+  }
+
+  .info-card,
+  .info-card--right {
+    padding: 1rem;
+    min-height: auto;
+    text-align: center;
+  }
+
+  .info-card__art {
+    position: static;
+    transform: none;
+    width: 120px;
+    margin: 0 auto 0.75rem;
+  }
+
+  .info-card--left .info-card__art,
+  .info-card--right .info-card__art {
+    left: auto;
+    right: auto;
   }
 }

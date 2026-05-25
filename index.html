@@ -19,11 +19,7 @@
   <!-- Encabezado principal con navegación global -->
   <header class="site-header">
     <div class="brand">
-      <span class="brand__logo">🌙</span>
-      <div class="brand__text">
-        <h1>Nova</h1>
-        <p>Un universo que acompaña, juega e inspira</p>
-      </div>
+      <img class="brand__logo" src="assets/img/logo.png" alt="Nova" />
     </div>
 
     <nav class="site-nav" aria-label="Navegación principal">
@@ -50,8 +46,12 @@
 
       <!-- Espacio visual para una imagen principal futura -->
       <div class="hero__art" aria-hidden="true">
-        <div class="planet planet--large"></div>
-        <div class="planet planet--small"></div>
+        <div class="planet planet--large">
+          <img class="planet__character" src="assets/img/planet-character-1.png" alt="" />
+        </div>
+        <div class="planet planet--small">
+          <img class="planet__character" src="assets/img/planet-character-2.png" alt="" />
+        </div>
         <div class="sparkle sparkle--one">✨</div>
         <div class="sparkle sparkle--two">⭐</div>
       </div>
@@ -60,7 +60,8 @@
     <!-- Bloque de personajes principales -->
     <section class="intro-grid">
       <!-- Sof-IA -->
-      <article class="info-card">
+      <article class="info-card info-card--left">
+        <img class="info-card__art" src="assets/img/sof-ia.png" alt="" aria-hidden="true" loading="lazy" />
         <h3>🤖 Sof-IA</h3>
         <p>
           Una guía amigable que acompaña a los niños en cada actividad. Sof-IA explica, anima y hace que el viaje por Nova sea más cercano y seguro, además es una osita de peluche!!.
@@ -68,7 +69,8 @@
       </article>
 
       <!-- Los Brillos -->
-      <article class="info-card">
+      <article class="info-card info-card--right">
+        <img class="info-card__art" src="assets/img/brillos.png" alt="" aria-hidden="true" loading="lazy" />
         <h3>✨ Los Brillos</h3>
         <p>
           Pequeñas energías del universo de Nova. Representan esperanza, descubrimiento y la magia que habita en cada uno de nosotros, ellos buscarán un hogar en compañia de Nova.
@@ -76,7 +78,8 @@
       </article>
 
       <!--Aqui podemos poner a los puar cuando Guti los acabe xd-->
-      <article class="info-card">
+      <article class="info-card info-card--left">
+        <img class="info-card__art" src="assets/img/puas.png" alt="" aria-hidden="true" loading="lazy" />
         <h3>🧌 Puás</h3>
         <p>
           Son seres a los que les gusta bailar y disfrutar con nuevas personas. Tienen colas que pueden curar cualquier mal.
@@ -84,7 +87,8 @@
       </article>
 
       <!--Bunny Space-Ship!-->
-      <article class="info-card">
+      <article class="info-card info-card--right">
+        <img class="info-card__art" src="assets/img/bunny-space-ship.png" alt="" aria-hidden="true" loading="lazy" />
         <h3>🐰 Bunny Space-Ship</h3>
         <p>
           ¡Una amigable conejo que también es una nave espacial! Ella será el transporte de Nova y compañía durante su travesía espacial.
