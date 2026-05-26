@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
   <!-- Encabezado principal con navegación global -->
   <header class="site-header">
     <div class="brand">
@@ -34,7 +37,7 @@
   <!-- Contenido principal de la página -->
   <main class="page">
     <!-- Hero: presentación general del universo -->
-    <section class="hero">
+    <section class="hero reveal">
       <div class="hero__content">
         <p class="eyebrow">Universo narrativo infantil + experiencias interactivas</p>
         <h2>Bienvenidos a Nova</h2>
@@ -60,7 +63,7 @@
     <!-- Bloque de personajes principales -->
     <section class="intro-grid">
       <!-- Nova -->
-      <article class="info-card info-card--right">
+      <article class="info-card info-card--right reveal">
         <img class="info-card__art" src="assets/img/novasaludando.png" alt="" aria-hidden="true" loading="lazy" />
         <h3>🌟 Nova</h3>
         <p>
@@ -69,7 +72,7 @@
       </article>
 
       <!-- Sof-IA -->
-      <article class="info-card info-card--left">
+      <article class="info-card info-card--left reveal">
         <img class="info-card__art" src="assets/img/sof-ia.png" alt="" aria-hidden="true" loading="lazy" />
         <h3>🐻 Sof-IA</h3>
         <p>
@@ -78,7 +81,7 @@
       </article>
 
       <!-- Los Brillos -->
-      <article class="info-card info-card--right">
+      <article class="info-card info-card--right reveal">
         <img class="info-card__art" src="assets/img/brillos.png" alt="" aria-hidden="true" loading="lazy" />
         <h3>✨ Los Brillos</h3>
         <p>
@@ -87,7 +90,7 @@
       </article>
 
       <!--Aqui podemos poner a los puar cuando Guti los acabe xd-->
-      <article class="info-card info-card--left">
+      <article class="info-card info-card--left reveal">
         <img class="info-card__art" src="assets/img/pua.png" alt="" aria-hidden="true" loading="lazy" />
         <h3>🧌 Puás</h3>
         <p>
@@ -96,7 +99,7 @@
       </article>
 
       <!--Bunny Space-Ship!-->
-      <article class="info-card info-card--right">
+      <article class="info-card info-card--right reveal">
         <img class="info-card__art" src="assets/img/bunny-space-ship.png" alt="" aria-hidden="true" loading="lazy" />
         <h3>🐰 Bunny Space-Ship</h3>
         <p>
@@ -106,31 +109,31 @@
     </section>
 
     <!-- Botones grandes tipo card -->
-    <section class="card-actions" aria-label="Accesos principales">
+    <section class="card-actions reveal" aria-label="Accesos principales">
       <!-- Cada botón funciona como tarjeta interactiva -->
-      <a class="action-card" href="cuentos.html">
+      <a class="action-card reveal" href="cuentos.html">
         <span class="action-card__icon">🚀</span>
         <span class="action-card__title">¡A explorar la historia!</span>
         <span class="action-card__text">Entra al mundo narrativo de Nova.</span>
       </a>
 
-      <a class="action-card" href="juegos.html">
+      <a class="action-card reveal" href="juegos.html">
         <span class="action-card__icon">🎮</span>
         <span class="action-card__title">¡Hora de jugar!</span>
         <span class="action-card__text">Descubre el videojuego y el juego de mesa.</span>
       </a>
 
-      <a class="action-card" href="multimedia.html">
+      <a class="action-card reveal" href="multimedia.html">
         <span class="action-card__icon">✨</span>
         <span class="action-card__title">¡Mira nuestro proceso!</span>
         <span class="action-card__text">Explora la galería del proceso creativo.</span>
       </a>
 
-      <a class="action-card" href="animaciones.html">
+      <a class="action-card reveal" href="animaciones.html">
         <span class="action-card__icon">🎬</span>
         <span class="action-card__title">¡Mira la magia!</span>
         <span class="action-card__text">Diviértete bailando junto a Nova y sus amigos con los videos animados.</span>
-      </a>      
+      </a>
     </section>
   </main>
 
@@ -138,5 +141,7 @@
   <footer class="site-footer">
     <p>Proyecto Nova · EAFIT × Funavid · Hecho con cariño para explorar, aprender y crear.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

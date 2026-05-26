@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
   <header class="site-header">
     <div class="brand">
       <img class="brand__logo" src="assets/img/logo.png" alt="Nova" />
@@ -27,7 +30,7 @@
   </header>
 
   <main class="page">
-    <section class="section-hero">
+    <section class="section-hero reveal">
       <h2>La historia de Nova</h2>
       <p>
         En esta sección se reúne el libro físico, sus fotografías y la versión digital para navegar la narrativa desde diferentes formatos.
@@ -35,13 +38,13 @@
     </section>
 
     <!-- Contenedor para el libro digital en Genially -->
-    <section class="content-block">
+    <section class="content-block reveal">
       <div class="section-heading">
         <h3>💫 Libro digital</h3>
         <p>Un espacio lleno de magia donde podrás explorar en compañía de Sof-IA el espacio.</p>
       </div>
 
-      <div class="embed-frame">
+      <div class="embed-frame reveal">
         <iframe
           src="https://view.genially.com/69f570a3015f11ca934c1cbb"
           title="Libro digital de Nova en Genially"
@@ -52,13 +55,13 @@
     </section>
 
     <!-- Libro físico en visor interactivo -->
-    <section class="content-block">
+    <section class="content-block reveal">
       <div class="section-heading">
         <h3>📚 Libro físico</h3>
         <p>Explora el planeta de los Púas. Pasa las páginas y descubre cada detalle de la edición impresa.</p>
       </div>
 
-      <div class="embed-frame">
+      <div class="embed-frame reveal">
         <iframe src="https://www.covver.com/embed/aauWRjkjqFprpQ3b4p6H" width="800" height="580" style="border: none;" allowfullscreen></iframe>
       </div>
     </section>
@@ -67,5 +70,7 @@
   <footer class="site-footer">
     <p>Proyecto Nova · Narrativa física y digital para familias y niños.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

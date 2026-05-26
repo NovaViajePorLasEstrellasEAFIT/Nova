@@ -1,9 +1,7 @@
 /* =========================================================
    NOVA - HOJA DE ESTILOS GLOBALES
-   Esta hoja sirve para todas las páginas del proyecto
-   ya sabes que CSS es un lenguaje de casacada osea que lo de arriba es la base general y lo de abajo es especifico para ese elemento
-   Deben estar conectados por un selector (ya sea el nombre de la etiqueta, una clase o un ID
-   ojito que esto es distinto a html bro
+   Base del proyecto + fusión estética inspirada en el viaje
+   por las estrellas, sin romper la estructura actual.
    ========================================================= */
 
 /* Variables globales: permiten cambiar colores y medidas fácilmente */
@@ -25,6 +23,12 @@
   --radius-md: 20px;
   --radius-sm: 14px;
   --max-width: 1200px;
+
+  /* Capas de estrellas para el ambiente */
+  --star-white: rgba(255, 255, 255, 0.95);
+  --star-soft: rgba(255, 255, 255, 0.7);
+  --star-gold: rgba(245, 197, 24, 0.65);
+  --star-blue: rgba(163, 230, 255, 0.7);
 }
 
 /* Reset básico: elimina márgenes y prepara el layout */
@@ -44,16 +48,85 @@ body {
   color: var(--text);
   line-height: 1.6;
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  isolation: isolate;
 
-  /* Capas de estrellas CSS (diminutas y de diferente opacidad) + Fondo Morado Cálido */
-  background-image:
-    radial-gradient(1px 1px at 25px 40px, rgba(255, 255, 255, 0.9), transparent),
-    radial-gradient(1.5px 1.5px at 75px 140px, rgba(255, 255, 255, 0.8), transparent),
-    radial-gradient(1px 1px at 120px 30px, rgba(255, 255, 255, 0.6), transparent),
-    radial-gradient(2px 2px at 190px 80px, rgba(245, 197, 24, 0.5), transparent),
-    radial-gradient(circle at 50% 40%, #3c2f80 0%, #1a1235 100%);
-  background-size: 200px 200px, 350px 350px, 150px 150px, 300px 300px, 100% 100%;
+  /* Fondo morado cálido + halo espacial */
+  background:
+    radial-gradient(ellipse at top, rgba(108, 76, 182, 0.32) 0%, transparent 38%),
+    radial-gradient(ellipse at bottom right, rgba(163, 230, 255, 0.12) 0%, transparent 28%),
+    radial-gradient(ellipse at bottom left, rgba(245, 197, 24, 0.07) 0%, transparent 24%),
+    linear-gradient(180deg, #2a2057 0%, #1d163d 40%, #130f2c 100%);
   background-attachment: fixed;
+}
+
+/* Sistema de estrellas animadas: capa suave y capa fina */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+  transform: translateZ(0);
+}
+
+/* Estrellas más grandes y visibles */
+body::before {
+  opacity: 0.75;
+  background-image:
+    radial-gradient(circle at 12% 18%, var(--star-white) 0 1.4px, transparent 1.8px),
+    radial-gradient(circle at 28% 76%, var(--star-soft) 0 1.2px, transparent 1.9px),
+    radial-gradient(circle at 45% 22%, var(--star-blue) 0 1.5px, transparent 2.2px),
+    radial-gradient(circle at 62% 14%, var(--star-white) 0 1.1px, transparent 1.7px),
+    radial-gradient(circle at 74% 64%, var(--star-gold) 0 1.6px, transparent 2.4px),
+    radial-gradient(circle at 86% 28%, var(--star-soft) 0 1.1px, transparent 1.8px),
+    radial-gradient(circle at 18% 48%, var(--star-gold) 0 1.4px, transparent 2px),
+    radial-gradient(circle at 58% 48%, var(--star-white) 0 1.3px, transparent 2px),
+    radial-gradient(circle at 93% 80%, var(--star-blue) 0 1.2px, transparent 1.9px),
+    radial-gradient(circle at 8% 88%, var(--star-soft) 0 1.2px, transparent 1.8px);
+  background-size:
+    260px 260px,
+    320px 320px,
+    420px 420px,
+    300px 300px,
+    360px 360px,
+    240px 240px,
+    280px 280px,
+    500px 500px,
+    420px 420px,
+    360px 360px;
+  animation: starTwinkle 5.5s ease-in-out infinite alternate, starDrift 140s linear infinite;
+}
+
+/* Estrellas finas de fondo */
+body::after {
+  z-index: -1;
+  opacity: 0.55;
+  background-image:
+    radial-gradient(circle at 6% 12%, rgba(255,255,255,0.45) 0 0.9px, transparent 1.4px),
+    radial-gradient(circle at 20% 32%, rgba(255,255,255,0.35) 0 0.8px, transparent 1.3px),
+    radial-gradient(circle at 33% 14%, rgba(255,255,255,0.5) 0 0.9px, transparent 1.4px),
+    radial-gradient(circle at 41% 66%, rgba(255,255,255,0.35) 0 0.8px, transparent 1.3px),
+    radial-gradient(circle at 54% 24%, rgba(255,255,255,0.45) 0 0.8px, transparent 1.3px),
+    radial-gradient(circle at 67% 40%, rgba(255,255,255,0.4) 0 0.8px, transparent 1.3px),
+    radial-gradient(circle at 79% 18%, rgba(255,255,255,0.35) 0 0.8px, transparent 1.3px),
+    radial-gradient(circle at 89% 52%, rgba(255,255,255,0.5) 0 0.9px, transparent 1.4px),
+    radial-gradient(circle at 14% 84%, rgba(255,255,255,0.35) 0 0.8px, transparent 1.3px),
+    radial-gradient(circle at 61% 82%, rgba(255,255,255,0.45) 0 0.9px, transparent 1.4px);
+  background-size:
+    180px 180px,
+    220px 220px,
+    260px 260px,
+    300px 300px,
+    200px 200px,
+    240px 240px,
+    280px 280px,
+    320px 320px,
+    360px 360px,
+    400px 400px;
+  animation: starPulse 3.8s ease-in-out infinite alternate;
 }
 
 /* Imágenes y video responsivos por defecto */
@@ -68,6 +141,67 @@ iframe {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* =========================================================
+   CURSOR PERSONALIZADO
+   Nota: para activarlo de verdad, agrega dos divs al HTML:
+   <div class="cursor"></div>
+   <div class="cursor-ring"></div>
+   y un mini script que siga el mouse.
+   ========================================================= */
+
+body {
+  cursor: none;
+}
+
+.cursor {
+  width: 10px;
+  height: 10px;
+  background: var(--secondary);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition:
+    transform 0.15s ease,
+    width 0.3s,
+    height 0.3s,
+    background 0.3s,
+    box-shadow 0.3s;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 18px rgba(163, 230, 255, 0.55);
+}
+
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(163, 230, 255, 0.45);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition:
+    transform 0.35s cubic-bezier(.23, 1, .32, 1),
+    width 0.35s,
+    height 0.35s,
+    border-color 0.35s,
+    opacity 0.35s;
+  transform: translate(-50%, -50%);
+  opacity: 0.95;
+}
+
+.cursor.is-hover {
+  width: 14px;
+  height: 14px;
+  background: var(--primary);
+  box-shadow: 0 0 26px rgba(245, 197, 24, 0.65);
+}
+
+.cursor-ring.is-hover {
+  width: 48px;
+  height: 48px;
+  border-color: rgba(245, 197, 24, 0.55);
 }
 
 /* =========================================================
@@ -87,7 +221,20 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 1.25rem 0;
+  padding: 1rem 1.25rem;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+
+  /* Header fijo / flotante */
+  position: sticky;
+  top: 0.75rem;
+  z-index: 1000;
+  background: linear-gradient(180deg, rgba(29, 22, 61, 0.94), rgba(29, 22, 61, 0.78));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 40px rgba(11, 8, 34, 0.35);
+  backdrop-filter: blur(18px) saturate(145%);
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
 }
 
 /* Marca del proyecto */
@@ -152,6 +299,16 @@ a {
   padding: 1rem 0 3rem;
   display: grid;
   gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Alineación de secciones frente a navegación sticky */
+section,
+.content-block,
+.hero,
+.section-hero {
+  scroll-margin-top: 120px;
 }
 
 /* =========================================================
@@ -206,12 +363,29 @@ a {
   min-height: 300px;
   border-radius: var(--radius-lg);
   background-image:
-    radial-gradient(1px 1px at 25px 40px, rgba(255, 255, 255, 0.9), transparent),
-    radial-gradient(1.5px 1.5px at 75px 140px, rgba(255, 255, 255, 0.8), transparent),
-    radial-gradient(1px 1px at 120px 30px, rgba(255, 255, 255, 0.6), transparent),
-    radial-gradient(2px 2px at 190px 80px, rgba(245, 197, 24, 0.5), transparent),
-    radial-gradient(circle at 50% 40%, #3c2f80 0%, #1a1235 100%);
-  background-size: 200px 200px, 350px 350px, 150px 150px, 300px 300px, 100% 100%;
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.95) 0 1.4px, transparent 1.8px),
+    radial-gradient(circle at 28% 76%, rgba(255, 255, 255, 0.7) 0 1.2px, transparent 1.9px),
+    radial-gradient(circle at 45% 22%, rgba(163, 230, 255, 0.7) 0 1.5px, transparent 2.2px),
+    radial-gradient(circle at 62% 14%, rgba(255, 255, 255, 0.95) 0 1.1px, transparent 1.7px),
+    radial-gradient(circle at 74% 64%, rgba(245, 197, 24, 0.65) 0 1.6px, transparent 2.4px),
+    radial-gradient(circle at 86% 28%, rgba(255, 255, 255, 0.7) 0 1.1px, transparent 1.8px),
+    radial-gradient(circle at 18% 48%, rgba(245, 197, 24, 0.65) 0 1.4px, transparent 2px),
+    radial-gradient(circle at 58% 48%, rgba(255, 255, 255, 0.95) 0 1.3px, transparent 2px),
+    radial-gradient(circle at 93% 80%, rgba(163, 230, 255, 0.7) 0 1.2px, transparent 1.9px),
+    radial-gradient(circle at 8% 88%, rgba(255, 255, 255, 0.7) 0 1.2px, transparent 1.8px),
+    linear-gradient(180deg, rgba(55, 39, 112, 0.95), rgba(27, 20, 54, 0.98));
+  background-size:
+    260px 260px,
+    320px 320px,
+    420px 420px,
+    300px 300px,
+    360px 360px,
+    240px 240px,
+    280px 280px,
+    500px 500px,
+    420px 420px,
+    360px 360px,
+    100% 100%;
   overflow: hidden;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
@@ -253,6 +427,7 @@ a {
   position: absolute;
   font-size: 2rem;
   animation: float 4s ease-in-out infinite;
+  user-select: none;
 }
 
 .sparkle--one {
@@ -292,6 +467,7 @@ a {
   -webkit-backdrop-filter: blur(18px) saturate(140%);
 }
 
+/* Tarjetas de información con ilustración lateral */
 .info-card {
   position: relative;
   overflow: visible;
@@ -517,6 +693,72 @@ a {
   }
 }
 
+@keyframes starTwinkle {
+  0% {
+    opacity: 0.55;
+    filter: brightness(0.95);
+  }
+  50% {
+    opacity: 0.9;
+    filter: brightness(1.18);
+  }
+  100% {
+    opacity: 0.65;
+    filter: brightness(1);
+  }
+}
+
+@keyframes starPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes starDrift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-40px, 24px, 0);
+  }
+}
+
+/* Entrada tipo Wix / portfolio */
+.reveal,
+.fade-up,
+.fade-in {
+  opacity: 0;
+  transform: translateY(48px);
+  transition:
+    opacity 0.9s cubic-bezier(.23, 1, .32, 1),
+    transform 0.9s cubic-bezier(.23, 1, .32, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.visible,
+.fade-up.visible,
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variantes suaves opcionales */
+.reveal.reveal-slight {
+  transform: translateY(28px);
+}
+
+.reveal.reveal-scale {
+  transform: translateY(34px) scale(0.98);
+}
+
+.reveal.visible.reveal-scale {
+  transform: translateY(0) scale(1);
+}
+
 /* =========================================================
    RESPONSIVE DESIGN
    ========================================================= */
@@ -559,6 +801,9 @@ a {
   .site-header {
     justify-content: center;
     text-align: center;
+    top: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.95rem 1rem;
   }
 
   .brand {
@@ -603,5 +848,42 @@ a {
   .info-card--right .info-card__art {
     left: auto;
     right: auto;
+  }
+
+  body::before {
+    opacity: 0.5;
+  }
+
+  body::after {
+    opacity: 0.35;
+  }
+}
+
+/* Accesibilidad: reduce animaciones si el sistema lo pide */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body::before,
+  body::after,
+  .sparkle,
+  .cursor,
+  .cursor-ring,
+  .reveal,
+  .fade-up,
+  .fade-in,
+  .reveal.visible,
+  .fade-up.visible,
+  .fade-in.visible {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal,
+  .fade-up,
+  .fade-in {
+    opacity: 1;
+    transform: none;
   }
 }

@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
   <header class="site-header">
     <div class="brand">
       <img class="brand__logo" src="assets/img/logo.png" alt="Nova" />
@@ -27,7 +30,7 @@
   </header>
 
   <main class="page">
-    <section class="section-hero">
+    <section class="section-hero reveal">
       <h2>Animaciones de Nova</h2>
       <p>
         Una selección de piezas audiovisuales para ampliar el universo visual de Nova.
@@ -35,13 +38,13 @@
     </section>
 
     <!-- Video 1 -->
-    <section class="content-block">
+    <section class="content-block reveal">
       <div class="section-heading">
         <h3>🌌 Animación digital: ¡El Baile Estelar!</h3>
         <p>¡A bailar bajo las estrellas! Acompaña a Nova en este momento de risas y movimiento donde la verdadera magia es estar juntos</p>
       </div>
 
-      <div class="video-frame">
+      <div class="video-frame reveal">
         <video controls preload="metadata" poster="assets/img/yokai-poster.jpg">
           <source src="assets/video/MAPPINGdigital.mp4" type="video/mp4" />
           Tu navegador no soporta reproducción de video HTML5.
@@ -50,13 +53,13 @@
     </section>
 
     <!-- Video 2 -->
-    <section class="content-block">
+    <section class="content-block reveal">
       <div class="section-heading">
         <h3>✨ Video mapping: Animación "¡El Baile Estelar!"</h3>
         <p>Espacio para documentar la experiencia visual del mapping sobre superficies esféricas.</p>
       </div>
 
-      <div class="video-frame">
+      <div class="video-frame reveal">
         <video controls preload="metadata" poster="assets/img/mapping-poster.jpg">
           <source src="assets/video/mapping-esferas.mp4" type="video/mp4" />
           Tu navegador no soporta reproducción de video HTML5.
@@ -68,5 +71,7 @@
   <footer class="site-footer">
     <p>Proyecto Nova · Animación, video mapping y exploración visual.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

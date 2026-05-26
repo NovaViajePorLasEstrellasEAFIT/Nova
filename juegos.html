@@ -10,8 +10,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <script type="module" src="https://googleapis.com"></script>
 </head>
 <body>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
   <header class="site-header">
     <div class="brand">
       <img class="brand__logo" src="assets/img/logo.png" alt="Nova" />
@@ -27,7 +31,7 @@
   </header>
 
   <main class="page">
-    <section class="section-hero">
+    <section class="section-hero reveal">
       <h2>Interactividad en Nova</h2>
       <p>
         Aquí podrás encontrar el Video Juego de Nova "Nova, el viaje de las estrellas" <br> y tambien el juego de mesa de Nova
@@ -35,52 +39,89 @@
     </section>
 
     <!-- Catálogo del juego de mesa físico -->
-    <section class="content-block">
+    <section class="content-block reveal">
       <div class="section-heading">
         <h3>🃏 Juego de mesa físico</h3>
         <p>Sección pensada para mostrar caja, mapa, cartas y reglas del Juego fisico.</p>
       </div>
 
       <div class="catalog-grid">
-        <article class="catalog-card">
+        <article class="catalog-card reveal">
           <img src="assets/img/juegoMesaGeneral.jpg" alt="Juego de mesa de Nova" />
           <h4>Vista general</h4>
           <p>Fotografía frontal de presentación del juego.</p>
         </article>
 
-        <article class="catalog-card">
+        <article class="catalog-card reveal">
           <img src="assets/img/cajaReglas.jpeg" alt="Caja y reglas" />
-          <h4>Mapa</h4>
+          <h4>Caja y reglas</h4>
           <p>¡ Vista de la caja del juego de Nova junto a sus reglas! </p>
         </article>
 
-        <article class="catalog-card">
+        <article class="catalog-card reveal">
           <img src="assets/img/cartas.jpg" alt="Cartas del juego de mesa de Nova" />
           <h4>Cartas</h4>
           <p>Conjunto de cartas estrellas, cometas y asteroides.</p>
         </article>
 
-        <article class="catalog-card">
-          <img src="assets/img/Reglasfotoprueba.png" alt="Reglas del juego de mesa de Nova" />
+        <article class="catalog-card reveal">
+          <img src="assets/img/ReglasJuegoV2.png" alt="Reglas del juego de mesa de Nova" />
           <h4>Reglas</h4>
           <p>Instrucciones, manual de juego.</p>
         </article>
 
-        <article class="catalog-card">
+        <article class="catalog-card reveal">
           <img src="assets/img/ruletafichas.jpg" alt="Reglas del juego de mesa de Nova" />
           <h4>Ruleta y fichas</h4>
           <p>Ruleta del juego y fichas con forma de brillos.</p>
         </article>
+
+        <article class="catalog-card reveal">
+          <img src="assets/img/MapaJuego.png" alt="Reglas del juego de mesa de Nova" />
+          <h4>Mapa del juego</h4>
+          <p>Mapa del juego de Nova, donde cada partida es única.</p>
+        </article>        
       </div>
     </section>
 
-    <section class="content-block">
+    <section class="content-block reveal">
+      <div class="section-heading">
+        <h3>¡Modelado 3D de la caja del juego de Nova!</h3>
+        <p>Modelado 3D completo de la caja de juego de Nova donde podrás ver todos sus detalles.</p>
+      </div>
+
+      <div class="juegoMesaBuild reveal" id="juegoMesa-container">
+        <iframe src="https://poly.cam/capture/129DD0B4-E5A4-418B-8924-DFD4F7C93326/embed" title="Polycam capture viewer" style="height:100%;width:100%;max-height:720px;max-width:1280px;min-height:280px;min-width:280px" frameborder="0"></iframe>
+      </div>
+    </section>
+    
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+
+<section class="content-block reveal">
+  <div class="section-heading">
+    <h3>¡Modelado 3D del juego de mesa de Nova!</h3>
+    <p>Explora el juego de Nova en 3D. ¡Puedes girarlo y hacer zoom!</p>
+  </div>
+
+  <div class="juegoMesaBuild reveal" id="juegoMesa-container" style="height: 500px;">
+    <model-viewer 
+      src="assets/juegoMesa.glb" 
+      alt="Modelo 3D del juego de mesa Nova" 
+      auto-rotate 
+      camera-controls 
+      shadow-intensity="1" 
+      style="width: 100%; height: 100%;">
+    </model-viewer>
+  </div>
+</section>   
+
+    <section class="content-block reveal">
       <div class="section-heading">
         <h3>Juego de mesa digital</h3>
         <p>El juego de mesa digital de Nova, disfruta junto con tus amigos con el juego digital.</p>
       </div>
 
-      <div class="juegoMesaBuild" id="juegoMesa-container">
+      <div class="juegoMesaBuild reveal" id="juegoMesa-container">
         <iframe
           src="https://game-adaptation-tool--lucumisanchez58.replit.app"
           width="100%"
@@ -91,13 +132,13 @@
       </div>
     </section>
 
-    <section class="content-block">
+    <section class="content-block reveal">
       <div class="section-heading">
         <h3>🎮 Videojuego Unity Web</h3>
         <p>El videojuego de Nova: Acompáñala en una aventura donde tendrá que reencontrarse con los brillos.</p>
       </div>
 
-      <div class="unity-build" id="unity-container">
+      <div class="unity-build reveal" id="unity-container">
         <iframe
           src="juego/index.html"
           width="960"
@@ -112,5 +153,7 @@
   <footer class="site-footer">
     <p>Proyecto Nova · Videojuego + juego de mesa físico.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
