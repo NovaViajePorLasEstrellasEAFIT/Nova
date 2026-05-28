@@ -225,10 +225,8 @@ body {
   margin-top: 0.75rem;
   margin-bottom: 1rem;
 
-  /* Header fijo / flotante */
-  position: sticky;
-  top: 0.75rem;
-  z-index: 1000;
+  position: relative;
+  z-index: auto;
   background: linear-gradient(180deg, rgba(29, 22, 61, 0.94), rgba(29, 22, 61, 0.78));
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-lg);
@@ -760,6 +758,17 @@ section,
 }
 
 /* =========================================================
+   DESKTOP ONLY: Sticky Header
+   ========================================================= */
+@media (min-width: 1024px) {
+  .site-header {
+    position: sticky;
+    top: 0.75rem;
+    z-index: 1000;
+  }
+}
+
+/* =========================================================
    RESPONSIVE DESIGN
    ========================================================= */
 
@@ -801,7 +810,7 @@ section,
   .site-header {
     justify-content: center;
     text-align: center;
-    top: 0.5rem;
+    top: auto;
     margin-top: 0.5rem;
     padding: 0.95rem 1rem;
   }
